@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4a376277-0fa7-40ca-804c-44df04ae2309",
+		"_postman_id": "cd1270a7-5358-47ce-9608-6a4803a53866",
 		"name": "APICollection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "27081536"
@@ -16,6 +16,23 @@
 							"listen": "test",
 							"script": {
 								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"confirms that the paymentCurrency EUR\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"EUR\");\r",
+									"});\r",
+									"pm.test(\"Confirms that the categories could be system\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"system\");\r",
+									"});\r",
+									" \r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript"
@@ -821,62 +838,6 @@
 					"response": []
 				}
 			]
-		},
-		{
-			"name": "https://api.postman.com/collections/20857971-7d361073-81cd-4d17-afed-ec98dbd2bc1f?access_key=PMAT-01GXVFAJV42SXJS5MH0FZP8CGN",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code should 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"pm.test(\"Status code should have an OK string\", function () {\r",
-							"    pm.response.to.have.status(\"OK\");\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://api.postman.com/collections/20857971-7d361073-81cd-4d17-afed-ec98dbd2bc1f?access_key=PMAT-01GXVFAJV42SXJS5MH0FZP8CGN",
-					"protocol": "https",
-					"host": [
-						"api",
-						"postman",
-						"com"
-					],
-					"path": [
-						"collections",
-						"20857971-7d361073-81cd-4d17-afed-ec98dbd2bc1f"
-					],
-					"query": [
-						{
-							"key": "access_key",
-							"value": "PMAT-01GXVFAJV42SXJS5MH0FZP8CGN"
-						}
-					]
-				}
-			},
-			"response": []
 		}
 	]
 }
